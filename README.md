@@ -9,7 +9,7 @@
 | 김현훈 | 민연규 | 민정우 | 장서윤 |
 |:---:|:---:|:---:|:---:|
 | <img src="https://github.com/hyonun321.png" width="100" height="100"> | <img src="https://github.com/Ludovico7.png" width="100" height="100"> | <img src="https://github.com/minjungw00.png" width="100" height="100"> | <img src="https://github.com/pipisebastian.png" width="100" height="100"> |
-| BE | BE | FE | FE |
+| FE+BE | FE | BE | FE |
 | [@hyonun321](https://github.com/hyonun321) | [@Ludovico7](https://github.com/Ludovico7) | [@minjungw00](https://github.com/minjungw00) | [@pipisebastian](https://github.com/pipisebastian) |
 
 ## 🔧 기술 스택
