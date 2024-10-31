@@ -1,8 +1,16 @@
-## 📋 프로젝트 이름
-> 프로젝트에 대한 간단한 소개를 작성해주세요
+
+![Group 38 (1)](https://github.com/user-attachments/assets/a882c5c5-b205-43cc-9a16-2f5e87dbd6aa)
+
+## 📋 프로젝트 이름 : `Nocta`
+> 🌌 밤하늘의 별빛처럼, 자유로운 인터랙션 실시간 에디터
+
+- 실시간 기록 협업 소프트웨어입니다.
+
+## 👩‍💻 팀 이름 : `Glassmo` (글래스모)
+- 글래스모피즘의 약자
 
 ## 📅 프로젝트 기간
-> 2024.00.00 ~ 2024.00.00
+> 2024.10.28 ~ 2024.12.06
 
 ## 🌱 팀원 소개
 
@@ -14,60 +22,22 @@
 
 ## 🔧 기술 스택
 
+
+**Common**
+<div align="left"> <img src="https://img.shields.io/badge/TypeScript-3178C6?style=flat-square&logo=TypeScript&logoColor=white"/> <img src="https://img.shields.io/badge/Prettier-F7B93E?style=flat-square&logo=Prettier&logoColor=black"/> <img src="https://img.shields.io/badge/ESLint-4B32C3?style=flat-square&logo=ESLint&logoColor=white"/> <img src="https://img.shields.io/badge/Jest-C21325?style=flat-square&logo=Jest&logoColor=white"/> <img src="https://img.shields.io/badge/PNPM-F69220?style=flat-square&logo=PNPM&logoColor=white"/> <img src="https://img.shields.io/badge/Playwright-2EAD33?style=flat-square&logo=Playwright&logoColor=white"/> </div>
+
 **Frontend**
 
-<details>
-<summary>Frontend (추후 변경)</summary>
-
-<div align="left">
-<!-- Language -->
-<img src="https://img.shields.io/badge/TypeScript-3178C6?style=flat-square&logo=TypeScript&logoColor=white"/>
-<!-- Framework -->
-<img src="https://img.shields.io/badge/React-61DAFB?style=flat-square&logo=React&logoColor=black"/>
-<img src="https://img.shields.io/badge/Next.js-000000?style=flat-square&logo=Next.js&logoColor=white"/>
-<!-- State Management -->
-<img src="https://img.shields.io/badge/React_Query-FF4154?style=flat-square&logo=ReactQuery&logoColor=white"/>
-<img src="https://img.shields.io/badge/Recoil-3578E5?style=flat-square&logo=Recoil&logoColor=white"/>
-<!-- Styling -->
-<img src="https://img.shields.io/badge/Tailwind_CSS-06B6D4?style=flat-square&logo=tailwind-css&logoColor=white"/>
-<img src="https://img.shields.io/badge/Styled_Components-DB7093?style=flat-square&logo=styled-components&logoColor=white"/>
-<!-- UI Libraries -->
-<img src="https://img.shields.io/badge/MUI-007FFF?style=flat-square&logo=MUI&logoColor=white"/>
-<img src="https://img.shields.io/badge/Framer_Motion-0055FF?style=flat-square&logo=Framer&logoColor=white"/>
-<!-- Tools -->
-<img src="https://img.shields.io/badge/ESLint-4B32C3?style=flat-square&logo=eslint&logoColor=white"/>
-<img src="https://img.shields.io/badge/Prettier-F7B93E?style=flat-square&logo=prettier&logoColor=black"/>
-<img src="https://img.shields.io/badge/Storybook-FF4785?style=flat-square&logo=storybook&logoColor=white"/>
-<!-- Testing -->
-<img src="https://img.shields.io/badge/Jest-C21325?style=flat-square&logo=jest&logoColor=white"/>
-</div>
-
-</details>
+<div align="left"> <img src="https://img.shields.io/badge/React-61DAFB?style=flat-square&logo=React&logoColor=black"/> <img src="https://img.shields.io/badge/React_Query-FF4154?style=flat-square&logo=ReactQuery&logoColor=white"/> <img src="https://img.shields.io/badge/React_Router-CA4245?style=flat-square&logo=ReactRouter&logoColor=white"/> <img src="https://img.shields.io/badge/Zustand-764ABC?style=flat-square&logo=Zustand&logoColor=white"/> <img src="https://img.shields.io/badge/Panda_CSS-06B6D4?style=flat-square&logo=PandaCSS&logoColor=white"/> <img src="https://img.shields.io/badge/Vite-646CFF?style=flat-square&logo=Vite&logoColor=white"/> <img src="https://img.shields.io/badge/Storybook-FF4785?style=flat-square&logo=Storybook&logoColor=white"/> </div>
 
 **Backend**
-<details>
-<summary>Backend (추후 변경)</summary>
-<div align="left">
-<!-- Language -->
-<img src="https://img.shields.io/badge/TypeScript-3178C6?style=flat-square&logo=TypeScript&logoColor=white"/>
-<!-- Framework -->
-<img src="https://img.shields.io/badge/NestJS-E0234E?style=flat-square&logo=nestjs&logoColor=white"/>
-<!-- Database -->
-<img src="https://img.shields.io/badge/MySQL-4479A1?style=flat-square&logo=mysql&logoColor=white"/>
-<img src="https://img.shields.io/badge/Redis-DC382D?style=flat-square&logo=redis&logoColor=white"/>
-<img src="https://img.shields.io/badge/MongoDB-47A248?style=flat-square&logo=mongodb&logoColor=white"/>
-<!-- ORM -->
-<img src="https://img.shields.io/badge/TypeORM-FE0902?style=flat-square&logo=typeorm&logoColor=white"/>
-<!-- Tools -->
-<img src="https://img.shields.io/badge/Docker-2496ED?style=flat-square&logo=docker&logoColor=white"/>
-<img src="https://img.shields.io/badge/Nginx-009639?style=flat-square&logo=nginx&logoColor=white"/>
-<!-- Cloud -->
-<img src="https://img.shields.io/badge/AWS-232F3E?style=flat-square&logo=amazonaws&logoColor=white"/>
-<!-- Testing -->
-<img src="https://img.shields.io/badge/Jest-C21325?style=flat-square&logo=jest&logoColor=white"/>
-</div>
 
-</details>
+<div align="left"> <img src="https://img.shields.io/badge/NestJS-E0234E?style=flat-square&logo=NestJS&logoColor=white"/> <img src="https://img.shields.io/badge/MySQL-4479A1?style=flat-square&logo=MySQL&logoColor=white"/> <img src="https://img.shields.io/badge/MongoDB-47A248?style=flat-square&logo=MongoDB&logoColor=white"/> <img src="https://img.shields.io/badge/Redis-DC382D?style=flat-square&logo=Redis&logoColor=white"/> </div>
+
+**Infra**
+
+<div align="left"> <img src="https://img.shields.io/badge/Docker-2496ED?style=flat-square&logo=Docker&logoColor=white"/> <img src="https://img.shields.io/badge/Nginx-009639?style=flat-square&logo=Nginx&logoColor=white"/> <img src="https://img.shields.io/badge/GitHub_Actions-2088FF?style=flat-square&logo=GitHubActions&logoColor=white"/> <img src="https://img.shields.io/badge/NCloud-03C75A?style=flat-square&logo=Naver&logoColor=white"/> </div>
+
 
 ## 🚀 프로젝트 시작 가이드
 
