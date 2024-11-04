@@ -2,139 +2,92 @@ import js from '@eslint/js';
 import tseslint from '@typescript-eslint/eslint-plugin';
 import tsparser from '@typescript-eslint/parser';
 import prettierPlugin from 'eslint-plugin-prettier';
-import prettierConfig from 'eslint-config-prettier';
 import importPlugin from 'eslint-plugin-import';
-import react from 'eslint-plugin-react';
-import reactHooks from 'eslint-plugin-react-hooks';
-import jsxA11y from 'eslint-plugin-jsx-a11y';
-import { fileURLToPath } from 'url';
-import { dirname, resolve } from 'path';
 
-const __filename = fileURLToPath(import.meta.url);
-const __dirname = dirname(__filename);
+const airbnbRules = {
+  // Airbnb 스타일 가이드의 핵심 규칙들
+  'no-var': 'error',
+  'prefer-const': 'error',
+  'prefer-template': 'error',
+  'no-param-reassign': 'error',
+  'object-shorthand': 'error',
+  'prefer-destructuring': ['error', { array: true, object: true }],
+  'no-array-constructor': 'error',
+  'func-style': ['error', 'expression'],
+  'arrow-parens': ['error', 'always'],
+  'arrow-body-style': ['warn', 'as-needed'],
+  'no-duplicate-imports': 'error',
+  'one-var': ['error', 'never'],
+  'no-plusplus': ['error', { allowForLoopAfterthoughts: true }],
+  'spaced-comment': ['error', 'always'],
+  'no-underscore-dangle': 'off',
+  'max-len': ['warn', { code: 100, ignoreComments: true }],
+  
+  // Import 규칙
+  'import/prefer-default-export': 'off',
+  'import/no-default-export': 'off',
+  'import/extensions': 'off',
+  'import/no-extraneous-dependencies': 'off',
+  'import/first': 'error',
+  'import/newline-after-import': 'error',
+  'import/no-duplicates': 'error',
+};
 
 /** @type {import('eslint').Linter.FlatConfig[]} */
-export default [
-  // 공통 ignores 설정
+const config = [
+  js.configs.recommended,
+  
+  // 공통 설정
   {
-    ignores: ['**/node_modules/**', '**/dist/**', '**/build/**'],
-  },
-
-  // 클라이언트 소스 파일
-  {
-    files: ['client/src/**/*.{ts,tsx}'],
+    files: ['**/*.{ts,tsx,js,jsx}'],
     plugins: {
       '@typescript-eslint': tseslint,
       prettier: prettierPlugin,
-      react,
-      'react-hooks': reactHooks,
-      'jsx-a11y': jsxA11y,
       import: importPlugin,
     },
     languageOptions: {
       parser: tsparser,
+      ecmaVersion: 2022,
+      sourceType: 'module',
       parserOptions: {
-        project: resolve(__dirname, './client/tsconfig.json'),
-        tsconfigRootDir: __dirname,
         ecmaFeatures: {
           jsx: true,
         },
-        ecmaVersion: 2022,
-        sourceType: 'module',
       },
     },
-    // ... 나머지 설정
-  },
-
-  // 클라이언트 설정 파일 (vite.config.ts)
-  {
-    files: ['client/*.{ts,tsx}'],
-    plugins: {
-      '@typescript-eslint': tseslint,
-      prettier: prettierPlugin,
-      import: importPlugin,
-    },
-    languageOptions: {
-      parser: tsparser,
-      parserOptions: {
-        project: [
-          resolve(__dirname, './client/tsconfig.json'),
-          resolve(__dirname, './client/tsconfig.app.json'),
-        ],
-        ecmaFeatures: {
-          jsx: true,
-        },
-        tsconfigRootDir: __dirname,
-        ecmaVersion: 2022,
-        sourceType: 'module',
-      },
+    rules: {
+      // Airbnb 규칙
+      ...airbnbRules,
+      
+      // TypeScript
+      ...tseslint.configs.recommended.rules,
+      '@typescript-eslint/no-unused-vars': ['warn', {
+        varsIgnorePattern: '^(js|Injectable|Controller|Get|Post|Put|Delete|Patch|Options|Head|All)$',
+        argsIgnorePattern: '^_',
+        ignoreRestSiblings: true,
+      }],
+      '@typescript-eslint/explicit-function-return-type': 'off',
+      '@typescript-eslint/explicit-module-boundary-types': 'off',
+      '@typescript-eslint/no-explicit-any': 'warn',
+      
+      // Prettier
+      ...prettierPlugin.configs.recommended.rules,
+      
+      // 개발 초기 단계를 위한 규칙 완화
+      'no-console': 'off',
+      'no-unused-vars': 'off', // TypeScript rule을 대신 사용
+      'no-undef': 'off', // TypeScript에서 처리
     },
   },
-
-  // 서버 소스 파일
+  
+  // 설정 파일에 대한 특별 규칙
   {
-    files: ['server/src/**/*.ts'],
-    plugins: {
-      '@typescript-eslint': tseslint,
-      prettier: prettierPlugin,
-      import: importPlugin,
-    },
-    languageOptions: {
-      parser: tsparser,
-      parserOptions: {
-        project: resolve(__dirname, './server/tsconfig.json'),
-        tsconfigRootDir: __dirname,
-        ecmaVersion: 2022,
-        sourceType: 'module',
-      },
-      globals: {
-        // Jest globals
-        describe: true,
-        it: true,
-        expect: true,
-        beforeEach: true,
-        afterEach: true,
-        beforeAll: true,
-        afterAll: true,
-        jest: true,
-        // Node.js globals
-        process: true,
-        module: true,
-        require: true,
-        __dirname: true,
-        __filename: true,
-      },
-    },
-    // ... 나머지 설정
-  },
-
-  // 서버 테스트 파일
-  {
-    files: ['server/test/**/*.ts'],
-    plugins: {
-      '@typescript-eslint': tseslint,
-      prettier: prettierPlugin,
-      import: importPlugin,
-    },
-    languageOptions: {
-      parser: tsparser,
-      parserOptions: {
-        project: resolve(__dirname, './server/tsconfig.json'),
-        tsconfigRootDir: __dirname,
-        ecmaVersion: 2022,
-        sourceType: 'module',
-      },
-      globals: {
-        // Jest globals
-        describe: true,
-        it: true,
-        expect: true,
-        beforeEach: true,
-        afterEach: true,
-        beforeAll: true,
-        afterAll: true,
-        jest: true,
-      },
+    files: ['**/eslint.config.js', '**/prettier.config.js', '**/vite.config.ts'],
+    rules: {
+      '@typescript-eslint/no-unused-vars': 'off',
+      'import/no-unused-modules': 'off',
     },
   },
 ];
+
+export default config;
