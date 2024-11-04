@@ -12,20 +12,23 @@
     "outDir": "./dist",
     "baseUrl": "./",
     "incremental": true,
-    
-    "strict": false,                     
-    "skipLibCheck": true,               
-    "strictNullChecks": false,          
-    "noImplicitAny": false,            
-    "strictBindCallApply": false,       
-    
-    "forceConsistentCasingInFileNames": false,  
-    "noFallthroughCasesInSwitch": false,       
-    
+
+    "strict": false,
+    "skipLibCheck": true,
+    "strictNullChecks": false,
+    "noImplicitAny": false,
+    "strictBindCallApply": false,
+
+    "forceConsistentCasingInFileNames": false,
+    "noFallthroughCasesInSwitch": false,
+
     "moduleResolution": "node",
     "esModuleInterop": true,
     "resolveJsonModule": true
   },
-  "include": ["src/**/*"],
+  "include": [
+    "src/**/*",
+    "test/**/*" // e2e 테스트 파일을 위해
+  ],
   "exclude": ["node_modules", "dist"]
 }
