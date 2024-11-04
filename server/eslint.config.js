@@ -8,7 +8,7 @@ const __dirname = dirname(__filename);
 /** @type {import('eslint').Linter.FlatConfig[]} */
 export default [
   ...rootConfig,
-  
+
   {
     files: ['src/**/*.ts', 'test/**/*.ts'],
     languageOptions: {

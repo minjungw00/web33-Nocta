@@ -11,7 +11,7 @@ const __dirname = dirname(__filename);
 /** @type {import('eslint').Linter.FlatConfig[]} */
 export default [
   ...rootConfig,
-  
+
   {
     files: ['src/**/*.{ts,tsx}'],
     plugins: {
@@ -35,10 +35,13 @@ export default [
     rules: {
       // Airbnb React 규칙
       'react/boolean-prop-naming': ['error', { rule: '^(is|has)[A-Z]([A-Za-z0-9]?)+' }],
-      'react/function-component-definition': ['warn', {
-        namedComponents: 'arrow-function',
-        unnamedComponents: 'arrow-function',
-      }],
+      'react/function-component-definition': [
+        'warn',
+        {
+          namedComponents: 'arrow-function',
+          unnamedComponents: 'arrow-function',
+        },
+      ],
       'react/jsx-boolean-value': ['error', 'never'],
       'react/jsx-closing-bracket-location': ['error', 'line-aligned'],
       'react/jsx-closing-tag-location': 'error',
@@ -52,17 +55,17 @@ export default [
       'react/jsx-no-bind': 'warn',
       'react/jsx-no-duplicate-props': 'error',
       'react/jsx-pascal-case': 'error',
-      
+
       // 개발 초기를 위한 규칙 완화
       'react/react-in-jsx-scope': 'off',
       'react/jsx-props-no-spreading': 'off',
       'react/require-default-props': 'off',
       'react/prop-types': 'off',
-      
+
       // React Hooks
       'react-hooks/rules-of-hooks': 'error',
       'react-hooks/exhaustive-deps': 'warn',
-      
+
       // JSX A11y - 개발 초기에는 경고로만
       'jsx-a11y/click-events-have-key-events': 'warn',
       'jsx-a11y/no-static-element-interactions': 'warn',

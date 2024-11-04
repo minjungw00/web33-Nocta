@@ -22,7 +22,7 @@ const airbnbRules = {
   'spaced-comment': ['error', 'always'],
   'no-underscore-dangle': 'off',
   'max-len': ['warn', { code: 100, ignoreComments: true }],
-  
+
   // Import 규칙
   'import/prefer-default-export': 'off',
   'import/no-default-export': 'off',
@@ -36,7 +36,6 @@ const airbnbRules = {
 /** @type {import('eslint').Linter.FlatConfig[]} */
 const config = [
   js.configs.recommended,
-  
   // 공통 설정
   {
     files: ['**/*.{ts,tsx,js,jsx}'],
@@ -58,28 +57,43 @@ const config = [
     rules: {
       // Airbnb 규칙
       ...airbnbRules,
-      
+
       // TypeScript
       ...tseslint.configs.recommended.rules,
-      '@typescript-eslint/no-unused-vars': ['warn', {
-        varsIgnorePattern: '^(js|Injectable|Controller|Get|Post|Put|Delete|Patch|Options|Head|All)$',
-        argsIgnorePattern: '^_',
-        ignoreRestSiblings: true,
-      }],
+      '@typescript-eslint/no-unused-vars': [
+        'warn',
+        {
+          varsIgnorePattern:
+            '^(js|Injectable|Controller|Get|Post|Put|Delete|Patch|Options|Head|All)$',
+          argsIgnorePattern: '^_',
+          ignoreRestSiblings: true,
+        },
+      ],
       '@typescript-eslint/explicit-function-return-type': 'off',
       '@typescript-eslint/explicit-module-boundary-types': 'off',
       '@typescript-eslint/no-explicit-any': 'warn',
-      
+
       // Prettier
       ...prettierPlugin.configs.recommended.rules,
-      
+
       // 개발 초기 단계를 위한 규칙 완화
       'no-console': 'off',
       'no-unused-vars': 'off', // TypeScript rule을 대신 사용
       'no-undef': 'off', // TypeScript에서 처리
     },
   },
-  
+  {
+    ignores: [
+      'node_modules/',
+      'dist/',
+      'build/',
+      'coverage/',
+      '*.config.js',
+      'src/**/*.test.js',
+      'public/*',
+      'server/dist/'
+    ],
+  },
   // 설정 파일에 대한 특별 규칙
   {
     files: ['**/eslint.config.js', '**/prettier.config.js', '**/vite.config.ts'],
