@@ -4,10 +4,9 @@ about: 기능 추가 템플릿
 title: ''
 labels: Feat
 assignees: ''
-
 ---
 
-## ✏️ 기능 
+## ✏️ 기능
 
 - 추가하려는 기능에 대해 설명해주세요.
 
