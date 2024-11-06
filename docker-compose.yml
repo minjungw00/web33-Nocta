@@ -4,8 +4,7 @@ services:
       context: .
       dockerfile: ./client/Dockerfile
     volumes:
-      - ./client:/app/client
-      - /app/client/node_modules
+      - ./client/dist:/app/client/dist
     environment:
       - NODE_ENV=production
     command: pnpm --filter client run build
@@ -27,7 +26,6 @@ services:
       - "80:80"
     volumes:
       - ./client/dist:/usr/share/nginx/html
-      - ./nginx/default.conf:/etc/nginx/conf.d/default.conf
     depends_on:
       - frontend
       - backend
