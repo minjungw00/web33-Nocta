@@ -7,7 +7,7 @@ on:
 
 jobs:
   deploy:
-    runs-on: self-hosted label-test
+    runs-on: [self-hosted, label-test]
 
     steps:
       # 1. 레포지토리 클론
