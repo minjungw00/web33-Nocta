@@ -18,17 +18,20 @@ jobs:
     steps:
       # Checkout the repository
       - name: Checkout repository
-        uses: actions/checkout@v3
-
-      # Set up Node.js
-      - name: Set up Node.js
-        uses: actions/setup-node@v3
-        with:
-          node-version: "20" # 또는 프로젝트에서 사용하는 Node.js 버전
+        uses: actions/checkout@v4
 
       # Install pnpm
       - name: Install pnpm
-        run: npm install -g pnpm
+        uses: pnpm/action-setup@v4
+        with:
+          run_install: true
+
+      # Set up Node.js
+      - name: Set up Node.js
+        uses: actions/setup-node@v4
+        with:
+          node-version: "20" # 또는 프로젝트에서 사용하는 Node.js 버전
+          cache: "pnpm"
 
       # Install dependencies
       - name: Install dependencies
