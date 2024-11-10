@@ -25,7 +25,6 @@ jobs:
         uses: actions/setup-node@v3
         with:
           node-version: "20" # 또는 프로젝트에서 사용하는 Node.js 버전
-          cache: "pnpm" # pnpm의 캐시 활성화
 
       # Install pnpm
       - name: Install pnpm
