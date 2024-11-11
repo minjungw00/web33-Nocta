@@ -3,7 +3,7 @@ name: "Auto Merge Approved PRs"
 on:
   push:
     branches:
-      - dev
+      - test
 
 jobs:
   auto_merge:
